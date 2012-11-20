@@ -21,3 +21,8 @@ The maven release plugin will interactively ask to replace the snapshot version 
     mvn -Pprofile release:perform
 
 
+### Distribution Management
+
+We're using Codehaus as the target for the deployment, it should periodically get [picked up by Maven Central](https://maven.apache.org/guides/mini/guide-central-repository-upload.html#Publishing_your_artifacts_to_the_Central_Repository). The physical upload is facilitates with the Wagon plugin and we're using WebDAV.
+
+See [this article](http://docs.codehaus.org/display/MAVENUSER/Deploying+3rd+Party+Jars+With+WebDAV).
