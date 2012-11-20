@@ -53,9 +53,9 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.groovy.maven</groupId>
+                <groupId>org.codehaus.gmaven</groupId>
                 <artifactId>gmaven-plugin</artifactId>
-                <version>1.0-rc-2</version>
+                <version>1.4</version>
                 <executions>
                     <execution>
                         <phase>generate-resources</phase>
@@ -75,8 +75,7 @@
                               if ( new File(script).exists() ){
                                 // we are in top-level module
                                 println("Found script "+script);
-                                ant.exec(executable: script, dir: "${basedir}",
-                                        spawn: false, failifexecutionfails: true, failonerror: true){
+                                ant.exec(executable: script, dir: "${basedir}", spawn: false, failifexecutionfails: true, failonerror: true){
                                   arg(value: "http://jmock.org/dist")
                                   arg(value: "jmock-${release.version}-jars.zip" )
                                   arg(value: "target")
@@ -84,19 +83,16 @@
                                 }
                               } else {
                                 // we are in child module
-                                ant.copy(file: "${download.artifact.dir}/${artifact.name}.jar",
-                                        tofile: "${project.build.directory}/downloaded.jar", verbose: true);
-                                ant.unjar(src: "${project.build.directory}/downloaded.jar",
-                                          dest: "${project.build.outputDirectory}") {
-                                          patternset {
-                                            exclude(name: "**/*.java");
-                                          }
+                                ant.copy(file: "${download.artifact.dir}/${artifact.name}.jar", tofile: "${project.build.directory}/downloaded.jar", verbose: true);
+                                ant.unjar(src: "${project.build.directory}/downloaded.jar", dest: "${project.build.outputDirectory}") {
+                                  patternset {
+                                    exclude(name: "**/*.java");
+                                  }
                                 }
-                                ant.unjar(src: "${project.build.directory}/downloaded.jar",
-                                          dest: "${project.build.directory}/generated-sources/src") {
-                                          patternset {
-                                            exclude(name: "**/*.class");
-                                          }
+                                ant.unjar(src: "${project.build.directory}/downloaded.jar", dest: "${project.build.directory}/generated-sources/src") {
+                                  patternset {
+                                    exclude(name: "**/*.class");
+                                  }
                                 }
                               }
                             </source>
@@ -107,7 +103,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
-                <version>1.1</version>
+                <version>1.7</version>
                 <executions>
                     <execution>
                         <id>add-source</id>
@@ -126,7 +122,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.0-beta-7</version>
+                <version>2.3.2</version>
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <preparationGoals>clean install</preparationGoals>
