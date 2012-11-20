@@ -14,6 +14,17 @@ where `profile` is either `jmock1` or `jmock2`
 
 ### Release Proper
 
+Perform a sanity check
+
+    mvn -Pprofile release:prepare -DdryRun=true
+
+If it looks good, clean up after yourself
+
+    mvn release:clean
+    rm *.log
+
+Then move onto the release proper
+
     mvn -Pprofile release:prepare
 
 The maven release plugin will interactively ask to replace the snapshot version with the appropriate version and create an SCM tag with the snapshots resolved.
