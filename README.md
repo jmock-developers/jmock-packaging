@@ -4,7 +4,14 @@ Maven packaging for JMock
 
 ## Release Instructions (Maven 2)
 
+### Prerequisites
+
+Because the source projects aren't part of this packaging project, the source has to be retrieved before we can package it. Currently, this is done by an embedded Groovy script which attempts to download artifacts as part of the Maven build. It attempts to download artifacts from [http://jmock.org/dist](http://jmock.org/dist). It seems to be platform specific as it has problems on Windows.
+
+### Maven Profiles
+
 The parent pom supports two profiles; `jmock1` and `jmock2`. The profile determines which artifacts are part of the release.
+
 
 ### Snapshot Build
 
@@ -12,7 +19,8 @@ The parent pom supports two profiles; `jmock1` and `jmock2`. The profile determi
 
 where `profile` is either `jmock1` or `jmock2`
 
-### Release Proper
+
+### Release
 
 Perform a sanity check
 
@@ -37,7 +45,3 @@ The maven release plugin will interactively ask to replace the snapshot version 
 We're using Codehaus as the target for the deployment, it should periodically get [picked up by Maven Central](https://maven.apache.org/guides/mini/guide-central-repository-upload.html#Publishing_your_artifacts_to_the_Central_Repository). The physical upload is facilitates with the Wagon plugin and we're using WebDAV.
 
 See [this article](http://docs.codehaus.org/display/MAVENUSER/Deploying+3rd+Party+Jars+With+WebDAV).
-
-### Genernal Comments
-
-Looks like there's an OS dependancy when releasing to *nix environments. Even with cygwin, the groovy script will fail.
