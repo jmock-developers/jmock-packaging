@@ -8,9 +8,10 @@ JMock is organised into two modules, [jmock-library](https://github.com/jmock-de
 
 The general process for deploying new versions is
 
-1. Build artifacts from [jmock-library](https://github.com/jmock-developers/jmock-library) using it's `build.xml` Ant script.
-1. Deploy these artifacts to Codehaus using the project's `release.sh`. Once done, these should be publicly available at `http://jmock.org/dist`.
-1. Package and publish the artifacts created above.
+1. Tag release version in Subversion
+1. Run the `release.sh` script from [jmock-library](https://github.com/jmock-developers/jmock-library), it will export the tag from Subversion, build it (using the `build.xml` Ant script) and SCP artifacts to a remote location (www.jmock.org:/home/jmock/public_dist)
+1. You need to somehow make these artifacts available at `http://jmock.org/dist` (subsequent packaging steps require this).
+1. Package and publish the artifacts created above using this project.
 
 
 ## Packaging and Publishing Procedure
