@@ -2,7 +2,18 @@
 
 Maven packaging for JMock
 
-## Release Instructions (Maven 2)
+## Release Overview
+
+JMock is organised into two modules, [jmock-library](https://github.com/jmock-developers/jmock-library) and [jmock-packaging](https://github.com/jmock-developers/jmock-packaging) (this project). The main module is responsible for building deployment artifacts. The packaging project is just responsible for collecting these, packaging them (and creating `pom`s) and publishing  to a Maven repository. It doesn't actually "build" any source or execute any tests.
+
+The general process for deploying new versions is
+
+1. Build artifacts from [jmock-library](https://github.com/jmock-developers/jmock-library) using it's `build.xml` Ant script.
+1. Deploy these artifacts to Codehaus using the project's `release.sh`. Once done, these should be publicly available at `http://jmock.org/dist`.
+1. Package and publish the artifacts created above.
+
+
+## Packaging and Publishing Procedure
 
 ### Prerequisites
 
@@ -45,3 +56,8 @@ The maven release plugin will interactively ask to replace the snapshot version 
 We're using Codehaus as the target for the deployment, it should periodically get [picked up by Maven Central](https://maven.apache.org/guides/mini/guide-central-repository-upload.html#Publishing_your_artifacts_to_the_Central_Repository). The physical upload is facilitated by the Wagon plugin and we're using WebDAV.
 
 See [this article](http://docs.codehaus.org/display/MAVENUSER/Deploying+3rd+Party+Jars+With+WebDAV).
+
+
+### Misc
+
+[Questions](jmock-packaging/blob/master/questions.md)
