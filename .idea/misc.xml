@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/maven/pom.xml" />
+        <option value="$PROJECT_DIR$/maven/jmock/pom.xml" />
+        <option value="$PROJECT_DIR$/maven/jmock-cglib/pom.xml" />
+        <option value="$PROJECT_DIR$/maven/jmock-core/pom.xml" />
+        <option value="$PROJECT_DIR$/maven/jmock-junit3/pom.xml" />
+        <option value="$PROJECT_DIR$/maven/jmock-junit4/pom.xml" />
+        <option value="$PROJECT_DIR$/maven/jmock-legacy/pom.xml" />
+        <option value="$PROJECT_DIR$/maven/jmock-script/pom.xml" />
+      </list>
+    </option>
+    <option name="activeProfiles">
+      <list>
+        <option value="jmock2" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectResources">
+    <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="WebServicesPlugin" addRequiredLibraries="true" />
+</project>
+
