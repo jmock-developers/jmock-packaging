@@ -4,7 +4,7 @@ Maven packaging for JMock
 
 ## Release Overview
 
-JMock is organised into two modules, [jmock-library](https://github.com/jmock-developers/jmock-library) and [jmock-packaging](https://github.com/jmock-developers/jmock-packaging) (this project). The main module is responsible for building deployment artifacts. The packaging project is just responsible for collecting these, packaging them (and creating `pom`s) and publishing  to a Maven repository. It doesn't actually "build" any source or execute any tests.
+JMock is organised into two modules, [jmock-library](https://github.com/jmock-developers/jmock-library) and [jmock-packaging](https://github.com/jmock-developers/jmock-packaging) (this project). The main module is responsible for building deployment artifacts. The packaging project is just responsible for collecting these, packaging them (and creating `pom`s) and publishing to a Maven repository. It doesn't actually "build" any source or execute any tests.
 
 The general process for deploying new versions is
 
@@ -12,6 +12,18 @@ The general process for deploying new versions is
 1. Run the `release.sh` script from [jmock-library](https://github.com/jmock-developers/jmock-library), it will export the tag from Subversion, build it (using the `build.xml` Ant script) and SCP artifacts to a remote location (www.jmock.org:/home/jmock/public_dist)
 1. You need to somehow make these artifacts available at `http://jmock.org/dist` (subsequent packaging steps require this).
 1. Package and publish the artifacts created above using this project.
+
+### Terminology
+
+Just so that we're all talking the same language, some definitions of terms we use when talking about releasing.
+
+   * __build__ : building a set of binary artifacts (.jar, javadoc etc) for deployment
+   * __release__ : tagging a baseline in source control.
+   * __deploy__ : distributing the _build artifacts_ to the internet
+   * __packaging__ : specifically referring to creating the Maven packages for subsequent deployment (upload) to Maven central
+   * __publishing__ : Maven equivalent of __deploy__; distribute the build artifacts to Maven central (indirectly)
+
+Currently, __build__ and __release__ are the responsibility of the `jmock-library` project. The __deploy__ step is currently done by the `jmock-library` to make artifacts available for manual download via `jmock.org`. The __packaging__ and __publishing__ steps are the responsibility of the `jmock-packaging` project.
 
 
 ## Packaging and Publishing Procedure
