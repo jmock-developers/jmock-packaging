@@ -30,12 +30,18 @@ Currently, __build__ and __release__ are the responsibility of the `jmock-librar
 
 ### Prerequisites
 
-Because the source projects aren't part of this packaging project, the source has to be retrieved before we can package it. Currently, this is done by an embedded Groovy script which attempts to download artifacts as part of the Maven build. It attempts to download artifacts from [http://jmock.org/dist](http://jmock.org/dist). It seems to be platform specific as it has problems on Windows.
+Because the source projects aren't part of this packaging project, the source has to be retrieved before we can package it. Currently, this is done by an embedded Groovy script which attempts to download artifacts as part of the Maven build. It attempts to download artifacts from [http://jmock.org/downloads](http://jmock.org/dist). It seems to be platform specific as it has problems on Windows.
+
+When it executes, it runs the `src/script/download-jars.sh` script, with the following options `./download-jars.sh http://jmock.org/downloads jmock-2.6.0-jars.zip target jmock-2.6.0`.
+
+Make sure you change the following line in the `jmock2` profile of the parent `pom.xml` to reflect the release.
+
+    <release.version>2.6.0</release.version>
+
 
 ### Maven Profiles
 
 The parent pom supports two profiles; `jmock1` and `jmock2`. The profile determines which artifacts are part of the release.
-
 
 ### Snapshot Build
 
@@ -66,6 +72,6 @@ The maven release plugin will interactively ask to replace the snapshot version 
 
 ### Distribution Management
 
-We're using Codehaus as the target for the deployment, it should periodically get [picked up by Maven Central](https://maven.apache.org/guides/mini/guide-central-repository-upload.html#Publishing_your_artifacts_to_the_Central_Repository). The physical upload is facilitated by the Wagon plugin and we're using WebDAV.
+We're using OSS Sonatype as the target for deployment, it should periodically get [picked up by Maven Central](https://maven.apache.org/guides/mini/guide-central-repository-upload.html#Publishing_your_artifacts_to_the_Central_Repository).
 
-See [this article](http://docs.codehaus.org/display/MAVENUSER/Deploying+3rd+Party+Jars+With+WebDAV).
+We're no longer using Codehaus and the nasty Wagon/WebDAV nonsense.
