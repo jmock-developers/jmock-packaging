@@ -1,11 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jmock</groupId>
     <artifactId>jmock-parent</artifactId>
     <packaging>pom</packaging>
     <version>2.6.0-SNAPSHOT</version>
     <name>jMock Parent</name>
-
     <inceptionYear>2003</inceptionYear>
     <organization>
         <name>jMock</name>
@@ -21,25 +27,10 @@
     </licenses>
 
     <scm>
+        <connection>scm:git:git@github.com:jmock-developers/jmock-packaging.git</connection>
         <developerConnection>scm:git:git@github.com:jmock-developers/jmock-packaging.git</developerConnection>
         <url>https://github.com/jmock-developers/jmock-packaging.git</url>
     </scm>
-
-    <distributionManagement>
-        <!--
-          The id used must match a server id defined in ~/.m2/settings.xml
-        -->
-        <repository>
-            <id>codehaus.org</id>
-            <name>Codehaus jMock Repository</name>
-            <url>dav:https://dav.codehaus.org/repository/jmock/</url>
-        </repository>
-        <snapshotRepository>
-            <id>codehaus.org</id>
-            <name>Codehaus jMock Snapshot Repository</name>
-            <url>dav:https://dav.codehaus.org/snapshots.repository/jmock/</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <build>
         <plugins>
@@ -126,17 +117,9 @@
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <preparationGoals>clean install</preparationGoals>
-                    <tagBase>https://svn.codehaus.org/jmock/tags</tagBase> <!-- TODO -->
                 </configuration>
             </plugin>
         </plugins>
-        <extensions>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-webdav</artifactId>
-                <version>1.0-beta-2</version>
-            </extension>
-        </extensions>
     </build>
 
     <properties>
