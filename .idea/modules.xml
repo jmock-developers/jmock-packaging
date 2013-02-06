@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/maven/jmock/jmock.iml" filepath="$PROJECT_DIR$/maven/jmock/jmock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven/jmock-cglib/jmock-cglib.iml" filepath="$PROJECT_DIR$/maven/jmock-cglib/jmock-cglib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven/jmock-core/jmock-core.iml" filepath="$PROJECT_DIR$/maven/jmock-core/jmock-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven/jmock-junit3/jmock-junit3.iml" filepath="$PROJECT_DIR$/maven/jmock-junit3/jmock-junit3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven/jmock-junit4/jmock-junit4.iml" filepath="$PROJECT_DIR$/maven/jmock-junit4/jmock-junit4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven/jmock-legacy/jmock-legacy.iml" filepath="$PROJECT_DIR$/maven/jmock-legacy/jmock-legacy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jmock-packaging.iml" filepath="$PROJECT_DIR$/jmock-packaging.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven/jmock-parent.iml" filepath="$PROJECT_DIR$/maven/jmock-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven/jmock-script/jmock-script.iml" filepath="$PROJECT_DIR$/maven/jmock-script/jmock-script.iml" />
+    </modules>
+  </component>
+</project>
+
