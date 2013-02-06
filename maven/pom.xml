@@ -124,6 +124,9 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
                 <version>1.4</version>
+                <configuration>
+                    <keyname>developers@jmock.org</keyname>
+                </configuration>
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
