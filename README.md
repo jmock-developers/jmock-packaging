@@ -50,15 +50,15 @@ The parent pom supports two profiles; `jmock1` and `jmock2`. The profile determi
 
 ### Local Snapshot Build
 
-    mvn -Pprofile install
+    mvn -Pjmock2 install
 
-where `profile` is either `jmock1` or `jmock2`.
+where `jmock2` in the profile name, it can be either `jmock1` or `jmock2`.
 
 ### Publish Snapshot to OSS Sonatype
 
 Make sure the `pom.xml` version should `-SNAPSHOT`.
 
-    mvn -Pprofile clean deploy
+    mvn -Pjmock2 clean deploy
 
 (and verify in the [Snapshot repository](https://oss.sonatype.org/content/repositories/snapshots/org/jmock))
 
@@ -67,20 +67,20 @@ Make sure the `pom.xml` version should `-SNAPSHOT`.
 
 Perform a sanity check
 
-    mvn -Pprofile release:prepare -DdryRun=true
+    mvn -Pjmock2 release:prepare -DdryRun=true
 
 If it looks good, clean up after yourself
 
-    mvn release:clean
+    mvn -Pjmock2 release:clean
     rm *.log
 
 Then move onto the release proper
 
-    mvn -Pprofile release:prepare
+    mvn -Pjmock2 release:prepare
 
 The maven release plugin will interactively ask to replace the snapshot version with the appropriate version and create an SCM tag with the snapshots resolved.
 
-    mvn -Pprofile release:perform
+    mvn -Pjmock2 release:perform
 
 
 ### Distribution Management
