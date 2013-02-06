@@ -88,3 +88,13 @@ The maven release plugin will interactively ask to replace the snapshot version 
 We're using [OSS Sonatype](https://oss.sonatype.org/index.html) as the target for deployment, it should periodically get [picked up by Maven Central](https://maven.apache.org/guides/mini/guide-central-repository-upload.html#Publishing_your_artifacts_to_the_Central_Repository).
 
 We're no longer using Codehaus and the nasty Wagon/WebDAV nonsense.
+
+### Signing Artifacts
+
+The JMock Devlopers (developers@jmock.org) public key hash is `6DDC9D8B`. It's been distributed to public key servers, so people can import using the following command.
+
+``` sh
+$ gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 6DDC9D8B
+```
+
+The `maven-gpg-plugin` will attempt to sign all artifacts before uploading to OSS Sonatype. Artifacts must be signed before Maven central will accept them. You'll need to ask around for the private key and pass phrase and [install GPG tools](https://www.gpgtools.org/) on the machine you'll be deploying from.
