@@ -1,6 +1,6 @@
 #!/bin/sh
 # Script to download artifacts 
-#  	- wget 
+#  	- curl
 #	- unzip 
 
 if [ $# -lt 4 ]
@@ -17,7 +17,8 @@ DOWNLOAD_NAME=$4
 if [ -d "$DOWNLOAD_DIR/$DOWNLOAD_NAME" ] ; then
     echo "Directory $DOWNLOAD_DIR/$DOWNLOAD_NAME exists"
 else
-	wget $DOWNLOAD_URL/$DOWNLOAD_ZIP -P $DOWNLOAD_DIR
+	curl $DOWNLOAD_URL/$DOWNLOAD_ZIP -o $DOWNLOAD_DIR/$DOWNLOAD_ZIP
 	unzip $DOWNLOAD_DIR/$DOWNLOAD_ZIP -d$DOWNLOAD_DIR/$DOWNLOAD_NAME
+	rm $DOWNLOAD_DIR/$DOWNLOAD_ZIP
 fi    
 
