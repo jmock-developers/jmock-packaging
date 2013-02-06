@@ -76,7 +76,7 @@
                                 // we are in top-level module
                                 println("Found script "+script);
                                 ant.exec(executable: script, dir: "${basedir}", spawn: false, failifexecutionfails: true, failonerror: true){
-                                  arg(value: "http://jmock.org/dist")
+                                  arg(value: "http://jmock.org/downloads")
                                   arg(value: "jmock-${release.version}-jars.zip" )
                                   arg(value: "target")
                                   arg(value: "jmock-${release.version}")
@@ -126,7 +126,7 @@
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <preparationGoals>clean install</preparationGoals>
-                    <tagBase>https://svn.codehaus.org/jmock/tags</tagBase>
+                    <tagBase>https://svn.codehaus.org/jmock/tags</tagBase> <!-- TODO -->
                 </configuration>
             </plugin>
         </plugins>
@@ -167,7 +167,7 @@
                 <module>jmock-script</module>
             </modules>
             <properties>
-                <release.version>2.5.1</release.version>
+                <release.version>2.6.0</release.version>
                 <download.artifact.dir>${basedir}/../${download.dir}/${download.name}/${download.name}
                 </download.artifact.dir>
             </properties>
