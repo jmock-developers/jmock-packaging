@@ -32,12 +32,17 @@ Currently, __build__ and __release__ are the responsibility of the `jmock-librar
 
 Because the source projects aren't part of this packaging project, the source has to be retrieved before we can package it. Currently, this is done by an embedded Groovy script which attempts to download artifacts as part of the Maven build. It attempts to download artifacts from [http://jmock.org/downloads](http://jmock.org/dist). It seems to be platform specific as it has problems on Windows.
 
-When it executes, it runs the `src/script/download-jars.sh` script, with the following options `./download-jars.sh http://jmock.org/downloads jmock-2.6.0-jars.zip target jmock-2.6.0`.
+When it executes, it runs the `src/script/download-jars.sh` script, with options making it equivalent to
+
+``` sh
+./download-jars.sh http://jmock.org/downloads jmock-2.6.0-jars.zip target jmock-2.6.0
+```
 
 Make sure you change the following line in the `jmock2` profile of the parent `pom.xml` to reflect the release.
 
-    <release.version>2.6.0</release.version>
-
+``` xml
+<release.version>2.6.0</release.version>
+```
 
 ### Maven Profiles
 
