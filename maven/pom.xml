@@ -66,6 +66,7 @@
                               if ( new File(script).exists() ){
                                 // we are in top-level module
                                 println("Found script "+script);
+                                ant.mkdir(dir: "target")
                                 ant.exec(executable: script, dir: "${basedir}", spawn: false, failifexecutionfails: true, failonerror: true){
                                   arg(value: "http://jmock.org/downloads")
                                   arg(value: "jmock-${release.version}-jars.zip" )
