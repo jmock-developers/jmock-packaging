@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
-  <servers>
-    <server>
-      <id>[repository id]</id>
-      <username>[your username]</username>
-      <password>[your password - only when needed]</password>
-    </server>
-  </servers>
+    <servers>
+        <server>
+            <id>sonatype-nexus-snapshots</id>
+            <username>your-jira-id</username>
+            <password>your-jira-pwd</password>
+        </server>
+        <server>
+            <id>sonatype-nexus-staging</id>
+            <username>your-jira-id</username>
+            <password>your-jira-pwd</password>
+        </server>
+    </servers>
 </settings>
